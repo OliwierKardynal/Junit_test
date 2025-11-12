@@ -41,6 +41,15 @@ public class CalculatorTest {
         assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
 
     }
+    @Test
+    public void testDivision_Success() { assertEquals(4, calc.division(16, 4));
+    }
+    @Test
+    public void testDivision_failure() {
+        Exception ex = assertThrows(ArithmeticException.class, () -> calc.division(Integer.MAX_VALUE, 0));
+        assertEquals("Cannot divide by zero", ex.getMessage());
+
+    }
 
 }
 
